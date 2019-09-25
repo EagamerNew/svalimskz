@@ -1,0 +1,65 @@
+.dashboard{
+  padding: 0;
+  margin: 0;
+  display: flex;
+  flex-direction: column;
+  align-content: stretch;
+  align-items: stretch;
+  height: 100vh;
+  position: relative;
+  color:black;
+  width: 70%;
+}
+.inner-text{
+  margin: 0;
+  position: absolute;
+  top: 50%;
+  -ms-transform: translateY(-50%);
+  transform: translateY(-50%);
+}
+.title{
+  font-size: 4em;
+  font-weight: bold;
+}
+.question-title{
+  font-size: 3em;
+  font-weight: bold;
+}
+.full-width-field{
+  min-width: 150px;
+  max-width: none;
+  width: 140%;
+  margin: 7% 0;
+  font-size: 1.5em;
+}
+.secondary-title{
+  font-weight: 400;
+  font-style: normal;
+  font-size: 2.5em;
+  margin: 3% 0;
+}
+.custom-primary{
+  font-size: large;
+  border-radius: unset;
+  font-weight: unset;
+  padding: 1% 35px;
+  text-transform: uppercase;
+  font-family: 'TT Norms';
+  background-color: black;
+  font-weight: 400;
+  color: white;
+}
+::ng-deep .mat-focused .mat-form-field-label {
+  /*change color of label*/
+  color: black !important;
+}
+
+::ng-deep.mat-form-field-underline {
+  /*change color of underline*/
+  background-color: black !important;
+}
+
+::ng-deep.mat-form-field-ripple {
+  /*change color of underline when focused*/
+  background-color: black !important;;
+}

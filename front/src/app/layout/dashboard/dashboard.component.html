@@ -1,0 +1,20 @@
+<div flex layout-fill class="dashboard">
+  <div class="inner-text">
+<!--    <h1 class="title">Все надоело и хочется свалить из страны?</h1>-->
+    <div *ngIf="state === 0">
+      <span class="title">Все надоело и хочется свалить из страны?</span>
+      <p class="secondary-title">Ответь на несколько вопросов и узнай куда тебе лучше свалить.</p>
+      <br>
+      <button mat-raised-button class="mat-primary custom-primary" (click)="start()">Приступить</button>
+    </div>
+    <div *ngIf="state === 1">
+      <span class="question-title">1. Как Вас зовут?</span>
+      <br>
+      <mat-form-field class="full-width-field">
+        <input matInput placeholder="Введите имя" autocomplete="off">
+      </mat-form-field>
+      <br>
+      <button mat-raised-button class="mat-primary custom-primary" >Следующий Вопрос</button>
+    </div>
+  </div>
+</div>
