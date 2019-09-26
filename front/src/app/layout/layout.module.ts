@@ -2,7 +2,15 @@ import { BrowserModule } from '@angular/platform-browser';
 import {CUSTOM_ELEMENTS_SCHEMA, NgModule} from '@angular/core';
 
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
-import {MatButtonModule, MatFormFieldModule, MatInputModule, MatSidenavModule} from '@angular/material';
+import {
+  MatButtonModule,
+  MatFormFieldModule,
+  MatIconModule,
+  MatInputModule,
+  MatRadioModule,
+  MatSidenavModule,
+  MatSliderModule
+} from '@angular/material';
 import {RouterModule} from '@angular/router';
 import {CoreModule, FlexLayoutModule} from '@angular/flex-layout';
 import {LayoutComponent} from './layout.component';
@@ -10,6 +18,7 @@ import {LayoutRoutingModule} from './layout-routing.module';
 import { PollComponent } from './poll/poll.component';
 import { DashboardComponent } from './dashboard/dashboard.component';
 import {CommonModule} from '@angular/common';
+import {FormsModule, ReactiveFormsModule} from '@angular/forms';
 
 @NgModule({
   declarations: [
@@ -26,6 +35,11 @@ import {CommonModule} from '@angular/common';
     CommonModule,
     MatFormFieldModule,
     MatInputModule,
+    ReactiveFormsModule,
+    MatIconModule,
+    MatSliderModule,
+    FormsModule,
+    MatRadioModule,
 
   ],
   schemas: [CUSTOM_ELEMENTS_SCHEMA],

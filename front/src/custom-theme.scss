@@ -14,6 +14,7 @@
 // hue. Available color palettes: https://material.io/design/color/
 $front-primary: mat-palette($mat-indigo);
 $front-accent: mat-palette($mat-pink, A200, A100, A400);
+///$my-app-accent:  mat-palette($mat-pink, 500, 900, A100);
 
 // The warn palette is optional (defaults to red).
 $front-warn: mat-palette($mat-red);

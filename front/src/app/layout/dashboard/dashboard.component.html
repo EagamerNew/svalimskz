@@ -1,6 +1,6 @@
 <div flex layout-fill class="dashboard">
+
   <div class="inner-text">
-<!--    <h1 class="title">Все надоело и хочется свалить из страны?</h1>-->
     <div *ngIf="state === 0">
       <span class="title">Все надоело и хочется свалить из страны?</span>
       <p class="secondary-title">Ответь на несколько вопросов и узнай куда тебе лучше свалить.</p>
@@ -11,10 +11,61 @@
       <span class="question-title">1. Как Вас зовут?</span>
       <br>
       <mat-form-field class="full-width-field">
-        <input matInput placeholder="Введите имя" autocomplete="off">
+        <input matInput placeholder="Введите имя" autocomplete="off" [formControl]="name">
+        <mat-error>
+          <mat-icon>warning</mat-icon>
+          <i>Пожалуйста заполните поле</i>
+        </mat-error>
       </mat-form-field>
       <br>
-      <button mat-raised-button class="mat-primary custom-primary" >Следующий Вопрос</button>
+      <button mat-raised-button class="mat-primary custom-primary" (click)="next()"
+              [disabled]="name.invalid || name.value === ''" [ngClass]="{'custom-pr-border':!(name.invalid)}">
+        Следующий Вопрос
+      </button>
+    </div>
+    <div *ngIf="state === 2">
+      <span class="question-title">2. Сколько Вам лет?</span>
+      <br>
+      <mat-slider
+        class="custom-mat-slider"
+        [max]="60"
+        [min]="16"
+        [step]="1"
+        [thumbLabel]="true"
+        [(ngModel)]="age">
+      </mat-slider>
+      <br>
+      <div class="custom-actions">
+        <button mat-raised-button class="mat-primary custom-primary custom-prev custom-pr-border" (click)="prev()">
+          Предыдущий Вопрос
+        </button>
+        <button mat-raised-button class="mat-primary custom-primary custom-pr-border margin-padding-10"
+                (click)="next()">
+          Следующий Вопрос
+        </button>
+      </div>
+    </div>
+    <div *ngIf="state === 3">
+      <span class="question-title">3. Семейное положение?</span>
+      <br>
+      <div>
+        <mat-radio-group style="margin: 7% 0;font-size: 1.5em;"
+                         fxLayout="row" fxLayoutAlign="space-between center"
+                         class="custom-radio-group">
+          <mat-radio-button value="1">Холост / Не замужем</mat-radio-button>
+          <mat-radio-button value="2">Женат / Замужем</mat-radio-button>
+        </mat-radio-group>
+      </div>
+      <br>
+      <div class="custom-actions">
+        <button mat-raised-button class="mat-primary custom-primary custom-prev custom-pr-border" (click)="prev()">
+          Предыдущий Вопрос
+        </button>
+        <button mat-raised-button class="mat-primary custom-primary custom-pr-border margin-padding-10"
+                (click)="next()">
+          Следующий Вопрос
+        </button>
+      </div>
     </div>
   </div>
 </div>

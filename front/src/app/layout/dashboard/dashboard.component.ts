@@ -1,5 +1,6 @@
 import {Component, OnDestroy, OnInit} from '@angular/core';
 import {Subject} from 'rxjs';
+import {FormControl, Validators} from '@angular/forms';
 
 @Component({
   selector: 'app-dashboard',
@@ -8,8 +9,12 @@ import {Subject} from 'rxjs';
 })
 export class DashboardComponent implements OnInit, OnDestroy {
 
-  state = 0;
-
+  state = 3;
+  personData: any = {
+    name: '',
+  };
+  name = new FormControl('', [Validators.required]);
+  age = 16;
   private unsubscribeAll: Subject<any>;
 
   constructor() {
@@ -28,4 +33,15 @@ export class DashboardComponent implements OnInit, OnDestroy {
     this.state = 1;
   }
 
+  next(): void {
+    this.state++;
+  }
+
+  prev() {
+    this.state--;
+  }
+
+  setState(state) {
+    this.state = state;
+  }
 }

@@ -1,4 +1,4 @@
-.dashboard{
+.dashboard {
   padding: 0;
   margin: 0;
   display: flex;
@@ -7,38 +7,44 @@
   align-items: stretch;
   height: 100vh;
   position: relative;
-  color:black;
+  color: black;
   width: 70%;
 }
-.inner-text{
+
+.inner-text {
   margin: 0;
   position: absolute;
   top: 50%;
   -ms-transform: translateY(-50%);
   transform: translateY(-50%);
 }
-.title{
+
+.title {
   font-size: 4em;
   font-weight: bold;
 }
-.question-title{
-  font-size: 3em;
-  font-weight: bold;
-}
-.full-width-field{
-  min-width: 150px;
-  max-width: none;
-  width: 140%;
-  margin: 7% 0;
-  font-size: 1.5em;
-}
-.secondary-title{
+
+.secondary-title {
   font-weight: 400;
   font-style: normal;
   font-size: 2.5em;
   margin: 3% 0;
 }
-.custom-primary{
+
+.question-title {
+  font-size: 3em;
+  font-weight: bold;
+}
+
+.full-width-field {
+  min-width: 150px;
+  max-width: none;
+  width: 100%;
+  margin: 7% 0;
+  font-size: 1.5em;
+}
+
+.custom-primary {
   font-size: large;
   border-radius: unset;
   font-weight: unset;
@@ -49,6 +55,23 @@
   font-weight: 400;
   color: white;
 }
+
+.custom-prev {
+  color: black;
+  background-color: white;
+}
+
+.custom-pr-border {
+  border: 1px solid black;
+}
+
+.margin-padding-10 {
+  margin-left: 10px;
+}
+
+/*
+  mat form field
+ */
 ::ng-deep .mat-focused .mat-form-field-label {
   /*change color of label*/
   color: black !important;
@@ -62,4 +85,102 @@
 ::ng-deep.mat-form-field-ripple {
   /*change color of underline when focused*/
   background-color: black !important;;
+}
+
+::ng-deep .mat-form-field-label {
+  font-style: italic !important;
+}
+
+::ng-deep .mat-focused .mat-form-field-label {
+  font-style: italic !important;
+}
+
+/*
+  mat slider
+ */
+::ng-deep .mat-accent .mat-slider-track-fill, .mat-accent .mat-slider-thumb, .mat-accent .mat-slider-thumb-label {
+  background-color: black !important;
+}
+
+::ng-deep .mat-accent .mat-slider-thumb {
+  bottom: -15px;
+  width: 30px;
+  height: 30px;
+  background-color: black !important;
+}
+
+::ng-deep .mat-accent .mat-slider-thumb-label {
+  width: 38px;
+  height: 38px;
+  background-color: black !important;
+}
+
+::ng-deep .mat-slider-horizontal .mat-slider-thumb-label {
+  top: -50px;
+}
+
+::ng-deep .mat-accent .mat-slider-track-fill {
+  background-color: rgba(0, 0, 0, 0.26) !important;
+}
+
+::ng-deep .mat-accent .mat-slider-track-background {
+  background-color: rgba(0, 0, 0, 0.26) !important;
+}
+
+.custom-mat-slider {
+  margin: 7% 0;
+  min-width: 150px;
+  max-width: none;
+  width: 100%;
+}
+
+/*--Step 3--*/
+.custom-padding-top-bottom {
+  padding: 9% 0;
+}
+
+.custom-padding-top-bottom .margin-padding-10 {
+  margin-left: 35px;
+}
+
+/*mat-checkbox*/
+::ng-deep .mat-radio-button.mat-accent .mat-radio-inner-circle {
+  background-color: black !important;
+}
+
+::ng-deep .mat-radio-button.mat-accent.mat-radio-checked .mat-radio-outer-circle {
+  background-color: black !important;
+  border-color: black !important;
+}
+::ng-deep .mat-radio-ripple .mat-ripple-element {
+  background-color: black !important;
+
+}
+/* For mobile phones: */
+@media only screen and (max-width: 768px) {
+  .dashboard {
+    width: 100%;
+  }
+
+  .title {
+    line-height: 60%;
+  }
+
+  .secondary-title {
+    line-height: 70%;
+  }
+
+  .margin-padding-10 {
+    /*padding: 1% 35px;*/
+    margin-top: 10px;
+    margin-left: unset;
+  }
+
+  .custom-actions {
+    text-align: center;
+  }
+
+  .custom-radio-group {
+    display: unset !important;
+  }
 }
