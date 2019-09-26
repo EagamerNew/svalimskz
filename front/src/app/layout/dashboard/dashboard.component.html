@@ -46,7 +46,29 @@
       </div>
     </div>
     <div *ngIf="state === 3">
-      <span class="question-title">3. Семейное положение?</span>
+      <span class="question-title">3. Вы мужчина или женщина?</span>
+      <br>
+      <div>
+        <mat-radio-group style="margin: 7% 0;font-size: 1.5em;"
+                         fxLayout="row" fxLayoutAlign="space-between center"
+                         class="custom-radio-group">
+          <mat-radio-button value="1">Мужчина</mat-radio-button>
+          <mat-radio-button value="2">Женщина</mat-radio-button>
+        </mat-radio-group>
+      </div>
+      <br>
+      <div class="custom-actions">
+        <button mat-raised-button class="mat-primary custom-primary custom-prev custom-pr-border" (click)="prev()">
+          Предыдущий Вопрос
+        </button>
+        <button mat-raised-button class="mat-primary custom-primary custom-pr-border margin-padding-10"
+                (click)="next()">
+          Следующий Вопрос
+        </button>
+      </div>
+    </div>
+    <div *ngIf="state === 4">
+      <span class="question-title">4. Семейное положение?</span>
       <br>
       <div>
         <mat-radio-group style="margin: 7% 0;font-size: 1.5em;"
@@ -67,5 +89,58 @@
         </button>
       </div>
     </div>
+    <div *ngIf="state === 5">
+      <span class="question-title">5. Вы закончили университет?</span>
+      <br>
+      <div style="line-height:50px;margin: 18px 0;">
+        <mat-radio-group style="margin: 7% 0;font-size: 1.5em;"
+                         [(ngModel)]="univerInfo"
+                         class="custom-radio-group">
+          <mat-radio-button value="1">Да, я бакалавр/магистр/phd.</mat-radio-button>
+          <br>
+          <mat-radio-button value="2">Нет, еще учусь.</mat-radio-button>
+          <br>
+          <mat-radio-button value="3">Не поступал.</mat-radio-button>
+        </mat-radio-group>
+      </div>
+      <br>
+      <div class="custom-actions">
+        <button mat-raised-button class="mat-primary custom-primary custom-prev custom-pr-border" (click)="prev()">
+          Предыдущий Вопрос
+        </button>
+        <button mat-raised-button class="mat-primary custom-primary custom-pr-border margin-padding-10"
+                (click)="next()">
+          Следующий Вопрос
+        </button>
+      </div>
+    </div>
+    <div *ngIf="state === 6">
+      <span class="question-title">6. А на кого Вы учились?</span>
+      <br>
+      <div style="line-height:50px;margin: 18px 0;">
+        <mat-form-field>
+          <mat-select [formControl]="cafedraCtrl" #singleSelect>
+            <mat-option>
+              <ngx-mat-select-search [formControl]="cafedraFilterCtrl"></ngx-mat-select-search>
+            </mat-option>
+
+            <mat-option *ngFor="let cafedra of filteredCafedras | async" [value]="cafedra">
+              {{cafedra.name}}
+            </mat-option>
+          </mat-select>
+        </mat-form-field>
+      </div>
+      <br>
+      <div class="custom-actions">
+        <button mat-raised-button class="mat-primary custom-primary custom-prev custom-pr-border" (click)="prev()">
+          Предыдущий Вопрос
+        </button>
+        <button mat-raised-button class="mat-primary custom-primary custom-pr-border margin-padding-10"
+                (click)="next()">
+          Следующий Вопрос
+        </button>
+      </div>
+    </div>
+
   </div>
 </div>

@@ -7,7 +7,7 @@ import {
   MatFormFieldModule,
   MatIconModule,
   MatInputModule,
-  MatRadioModule,
+  MatRadioModule, MatSelectModule,
   MatSidenavModule,
   MatSliderModule
 } from '@angular/material';
@@ -40,7 +40,7 @@ import {FormsModule, ReactiveFormsModule} from '@angular/forms';
     MatSliderModule,
     FormsModule,
     MatRadioModule,
-
+    MatSelectModule
   ],
   schemas: [CUSTOM_ELEMENTS_SCHEMA],
   providers: []
