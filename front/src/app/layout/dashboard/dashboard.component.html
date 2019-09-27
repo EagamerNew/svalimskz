@@ -118,10 +118,14 @@
       <span class="question-title">6. А на кого Вы учились?</span>
       <br>
       <div style="line-height:50px;margin: 18px 0;">
-        <mat-form-field>
+        <mat-form-field class="full-width-field">
           <mat-select [formControl]="cafedraCtrl" #singleSelect>
             <mat-option>
-              <ngx-mat-select-search [formControl]="cafedraFilterCtrl"></ngx-mat-select-search>
+              <ngx-mat-select-search
+                [formControl]="cafedraFilterCtrl"
+                [placeholderLabel]="'Поиск'"
+                [noEntriesFoundLabel]="'Не найдено'"
+              ></ngx-mat-select-search>
             </mat-option>
 
             <mat-option *ngFor="let cafedra of filteredCafedras | async" [value]="cafedra">
@@ -141,6 +145,36 @@
         </button>
       </div>
     </div>
+    <div *ngIf="state === 7">
+      <span class="question-title">7. Чем вы занимаетесь сейчас?</span>
+      <br>
+      <div style="line-height:50px;margin: 18px 0;">
+        <mat-form-field class="full-width-field">
+          <mat-select [formControl]="cafedraCtrl" #singleSelect>
+            <mat-option>
+              <ngx-mat-select-search
+                [formControl]="cafedraFilterCtrl"
+                [placeholderLabel]="'Поиск'"
+                [noEntriesFoundLabel]="'Не найдено'"
+              ></ngx-mat-select-search>
+            </mat-option>
 
+            <mat-option *ngFor="let cafedra of filteredCafedras | async" [value]="cafedra">
+              {{cafedra.name}}
+            </mat-option>
+          </mat-select>
+        </mat-form-field>
+      </div>
+      <br>
+      <div class="custom-actions">
+        <button mat-raised-button class="mat-primary custom-primary custom-prev custom-pr-border" (click)="prev()">
+          Предыдущий Вопрос
+        </button>
+        <button mat-raised-button class="mat-primary custom-primary custom-pr-border margin-padding-10"
+                (click)="next()">
+          Следующий Вопрос
+        </button>
+      </div>
+    </div>
   </div>
 </div>

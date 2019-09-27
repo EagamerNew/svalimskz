@@ -1,9 +1,9 @@
 import {AfterViewInit, Component, OnDestroy, OnInit, ViewChild} from '@angular/core';
 import {ReplaySubject, Subject} from 'rxjs';
 import {FormControl, Validators} from '@angular/forms';
-import {Cafedra, CAFEDRAS} from "../shared/model/cafedra";
-import {MatSelect} from "@angular/material";
-import {take, takeUntil} from "rxjs/operators";
+import {Cafedra, CAFEDRAS} from '../shared/model/cafedra';
+import {MatSelect} from '@angular/material';
+import {take, takeUntil} from 'rxjs/operators';
 
 @Component({
   selector: 'app-dashboard',
@@ -12,7 +12,7 @@ import {take, takeUntil} from "rxjs/operators";
 })
 export class DashboardComponent implements OnInit, OnDestroy, AfterViewInit {
 
-  state = 5;
+  state = 6;
   name = new FormControl('', [Validators.required]);
   age = 16;
   univerInfo = '1';

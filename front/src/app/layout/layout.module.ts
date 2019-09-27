@@ -19,6 +19,7 @@ import { PollComponent } from './poll/poll.component';
 import { DashboardComponent } from './dashboard/dashboard.component';
 import {CommonModule} from '@angular/common';
 import {FormsModule, ReactiveFormsModule} from '@angular/forms';
+import {NgxMatSelectSearchModule} from 'ngx-mat-select-search';
 
 @NgModule({
   declarations: [
@@ -40,7 +41,8 @@ import {FormsModule, ReactiveFormsModule} from '@angular/forms';
     MatSliderModule,
     FormsModule,
     MatRadioModule,
-    MatSelectModule
+    MatSelectModule,
+    NgxMatSelectSearchModule
   ],
   schemas: [CUSTOM_ELEMENTS_SCHEMA],
   providers: []
