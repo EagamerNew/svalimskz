@@ -179,28 +179,34 @@
     <div *ngIf="state === 8">
       <span class="question-title">8. Как с вами связатся?</span>
       <br>
-      <mat-form-field class="full-width-field">
+      <mat-form-field class="full-width-field" style="margin-bottom:0;">
         <input matInput placeholder="Электронная почта" autocomplete="off" [formControl]="mail">
         <mat-error>
           <mat-icon>warning</mat-icon>
-          <i>Пожалуйста заполните поле</i>
+          <i>Пожалуйста, введите действительный адрес электронной почты</i>
         </mat-error>
       </mat-form-field>
-      <br>
-      <mat-form-field class="full-width-field">
+      <mat-form-field class="full-width-field" style="margin-top:0;">
         <input matInput placeholder="Телефон" autocomplete="off" [formControl]="phone">
         <mat-error>
           <mat-icon>warning</mat-icon>
-          <i>Пожалуйста заполните поле</i>
+          <i>Пожалуйста, заполните поле</i>
         </mat-error>
       </mat-form-field>
       <br>
-      <button mat-raised-button class="mat-primary custom-primary" (click)="next()"
-              [disabled]="name.invalid || name.value === '' ||
+
+      <div class="custom-actions">
+        <button mat-raised-button class="mat-primary custom-primary custom-prev custom-pr-border" (click)="prev()">
+          Предыдущий Вопрос
+        </button>
+        <button mat-raised-button class="mat-primary custom-primary custom-pr-border margin-padding-10"
+                (click)="next()"
+                [disabled]="
                           mail.invalid || mail.value === '' ||
-                          phone.invalid || phone.value === ''" [ngClass]="{'custom-pr-border':!(name.invalid)}">
-        Следующий Вопрос
-      </button>
+                          phone.invalid || phone.value === ''" [ngClass]="{'custom-pr-border':!(mail.invalid) && !(phone.invalid)}">
+          Следующий Вопрос
+        </button>
+      </div>
     </div>
   </div>
 </div>
