@@ -20,12 +20,14 @@ import { DashboardComponent } from './dashboard/dashboard.component';
 import {CommonModule} from '@angular/common';
 import {FormsModule, ReactiveFormsModule} from '@angular/forms';
 import {NgxMatSelectSearchModule} from 'ngx-mat-select-search';
+import { ReanimationComponent } from './reanimation/reanimation.component';
 
 @NgModule({
   declarations: [
     LayoutComponent,
     PollComponent,
-    DashboardComponent
+    DashboardComponent,
+    ReanimationComponent
   ],
   imports: [
     MatButtonModule,

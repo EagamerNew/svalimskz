@@ -203,10 +203,28 @@
                 (click)="next()"
                 [disabled]="
                           mail.invalid || mail.value === '' ||
-                          phone.invalid || phone.value === ''" [ngClass]="{'custom-pr-border':!(mail.invalid) && !(phone.invalid)}">
+                          phone.invalid || phone.value === ''"
+                [ngClass]="{'custom-pr-border':!(mail.invalid) && !(phone.invalid)}">
           Следующий Вопрос
         </button>
       </div>
     </div>
+
+  </div>
+  <div *ngIf="state === 9">
+    <span class="title-9">Все надоело и хочется свалить из страны?</span>
+    <p class="secondary-title-9">В этих странах сможешь зарабатывать в среднем до $7500 / мес.
+      Оплати <span style="color:#d0021b;">490 тг.</span> чтобы узнать всю подробную информацию.</p>
+
+    <div fxLayout="column" fxLayoutAlign="space-around center">
+      <button mat-raised-button class="mat-primary custom-primary custom-prev custom-pr-border" (click)="prev()">
+        Оплатить
+      </button>
+      <button mat-raised-button class="mat-primary custom-primary custom-pr-border margin-padding-10"
+              (click)="next()">
+        Демо-версия
+      </button>
+    </div>
+
   </div>
 </div>

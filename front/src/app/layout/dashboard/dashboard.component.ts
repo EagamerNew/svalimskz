@@ -13,7 +13,7 @@ import {HOBBIES, Hobby} from '../shared/model/hobby';
 })
 export class DashboardComponent implements OnInit, OnDestroy, AfterViewInit {
 
-  state = 7;
+  state = 9;
   name = new FormControl('', [Validators.required]);
   mail = new FormControl('', [Validators.required, Validators.email]);
   phone = new FormControl('', [Validators.required]);
