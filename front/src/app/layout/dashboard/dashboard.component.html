@@ -67,7 +67,7 @@
         </button>
       </div>
     </div>
-    <div *ngIf="state === 4">
+    <div *ngIf="state === 4" class="custom-div-weight">
       <span class="question-title">4. Семейное положение?</span>
       <br>
       <div>
@@ -119,7 +119,7 @@
       <br>
       <div style="line-height:50px;margin: 18px 0;">
         <mat-form-field class="full-width-field">
-          <mat-select [formControl]="cafedraCtrl" #singleSelect>
+          <mat-select [formControl]="cafedraCtrl" #cafedraSelect>
             <mat-option>
               <ngx-mat-select-search
                 [formControl]="cafedraFilterCtrl"
@@ -150,17 +150,17 @@
       <br>
       <div style="line-height:50px;margin: 18px 0;">
         <mat-form-field class="full-width-field">
-          <mat-select [formControl]="cafedraCtrl" #singleSelect>
+          <mat-select [formControl]="hobbyCtrl" #hobbySelect>
             <mat-option>
               <ngx-mat-select-search
-                [formControl]="cafedraFilterCtrl"
+                [formControl]="hobbyFilterCtrl"
                 [placeholderLabel]="'Поиск'"
                 [noEntriesFoundLabel]="'Не найдено'"
               ></ngx-mat-select-search>
             </mat-option>
 
-            <mat-option *ngFor="let cafedra of filteredCafedras | async" [value]="cafedra">
-              {{cafedra.name}}
+            <mat-option *ngFor="let hobby of filteredHobbies | async" [value]="hobby">
+              {{hobby.name}}
             </mat-option>
           </mat-select>
         </mat-form-field>
@@ -175,6 +175,32 @@
           Следующий Вопрос
         </button>
       </div>
+    </div>
+    <div *ngIf="state === 8">
+      <span class="question-title">8. Как с вами связатся?</span>
+      <br>
+      <mat-form-field class="full-width-field">
+        <input matInput placeholder="Электронная почта" autocomplete="off" [formControl]="mail">
+        <mat-error>
+          <mat-icon>warning</mat-icon>
+          <i>Пожалуйста заполните поле</i>
+        </mat-error>
+      </mat-form-field>
+      <br>
+      <mat-form-field class="full-width-field">
+        <input matInput placeholder="Телефон" autocomplete="off" [formControl]="phone">
+        <mat-error>
+          <mat-icon>warning</mat-icon>
+          <i>Пожалуйста заполните поле</i>
+        </mat-error>
+      </mat-form-field>
+      <br>
+      <button mat-raised-button class="mat-primary custom-primary" (click)="next()"
+              [disabled]="name.invalid || name.value === '' ||
+                          mail.invalid || mail.value === '' ||
+                          phone.invalid || phone.value === ''" [ngClass]="{'custom-pr-border':!(name.invalid)}">
+        Следующий Вопрос
+      </button>
     </div>
   </div>
 </div>

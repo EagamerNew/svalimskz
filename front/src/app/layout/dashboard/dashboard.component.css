@@ -183,4 +183,14 @@
   .custom-radio-group {
     display: unset !important;
   }
+
+  .inner-text{
+    position: unset;
+    transform: translateY(31%);
+  }
+
+  .custom-div-weight{
+    line-height: 50px;
+    margin: 18px 0;
+  }
 }
